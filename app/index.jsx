@@ -1,17 +1,25 @@
 import React from 'react';
-import { render } from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import ReactDOM from 'react-dom';
+import Appbar from 'muicss/lib/react/appbar';
+import Button from 'muicss/lib/react/button';
+import Container from 'muicss/lib/react/container';
+
 
 const Hello = () => {
   return (
-    <h1>Hello World</h1>
-  );
+    <div>
+      <Appbar > Paths</ Appbar>
+      <Container fluid={false}>
+        <Button color="primary">button</Button>
+      </Container>
+    </div>
+     );
 };
 
 const App = () => (
-  <MuiThemeProvider>
-    <Hello />
-  </MuiThemeProvider>
+
+  <Hello />
+
 );
 
-render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
