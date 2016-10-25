@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const Hello = () => {
   return (
@@ -7,5 +8,11 @@ const Hello = () => {
   );
 };
 
-render(<Hello />, document.getElementById('app'));
+const App = () => (
+  <MuiThemeProvider>
+    <Hello />
+  </MuiThemeProvider>
+);
+
+render(<App />, document.getElementById('app'));
 
