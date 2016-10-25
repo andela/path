@@ -1,0 +1,35 @@
+{
+  "name": "path-frontend",
+  "version": "1.0.0",
+  "description": "The new Andela recruiting platform ",
+  "main": "server/index.js",
+  "scripts": {
+    "babel": "babel --ignore node_modules",
+    "build:node": "npm run babel -- ./server --out-dir ./compiled",
+    "prestart": "npm run build:node",
+    "start": "node compiled/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela/path.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela/path/issues"
+  },
+  "homepage": "https://github.com/andela/path#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1"
+  }
+}
