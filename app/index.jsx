@@ -4,7 +4,6 @@ import Appbar from 'muicss/lib/react/appbar';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 
-
 const Hello = () => {
   return (
     <div>
@@ -19,7 +18,6 @@ const Hello = () => {
 const App = () => (
 
   <Hello />
-
 );
 
 ReactDOM.render(<App />, document.getElementById('app'));
