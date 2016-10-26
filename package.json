@@ -22,10 +22,12 @@
   "homepage": "https://github.com/andela/path#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "muicss": "^0.9.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-tap-event-plugin": "^1.0.0"
+    "react-tap-event-plugin": "^1.0.0",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
