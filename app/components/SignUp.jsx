@@ -6,6 +6,7 @@ import Button from 'muicss/lib/react/button';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Panel from 'muicss/lib/react/panel';
+const src = require('file!../images/MainLogo.png');
 
 const SignUp = () => {
   const style = {
@@ -17,30 +18,26 @@ minHeight:'300px'
 
 const vcenter = {
 color :'#fff',
-backgroundColor:'#cfc',
 display:'block',
 marginLeft: 'auto',
 marginRight:'auto',
-
-
 height:'100px',
 
 }
   return (
 
     <Row >
-      <Col lg="9"  sm="12" xs="12" className="mui--align-middle " style={child}>
-        <Col className="mui--text-center mui--hidden-md" lg="4"  >
+      <Col lg="8"  sm="12" xs="12" style={child}>
+        <Col className="mui--pull-left" lg="4">
           <div style={vcenter}>
-
+            <img src={src}/>
              <h2 >register</h2>
           </div>
-
        </Col>
-      <Col lg="6" sm="10" xs="12" className="mui--pull-right" style={style}>
+      <Col lg="7" sm="12" xs="12"  className="mui--pull-right" style={child}>
         <Panel  style={{marginBottom:'1px'}}>
           <Form >
-            <legend>Register </legend>
+
             <Input hint="First Name" />
             <Input hint="Last Name" />
             <Input hint="Email" />
@@ -50,7 +47,6 @@ height:'100px',
           </Form>
         </Panel>
       </Col>
-
 </Col>
     </Row>
 

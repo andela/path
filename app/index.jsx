@@ -14,6 +14,8 @@ const Hello = () => {
       <Appbar style={{ backgroundColor: '#E0E0E0' }}> Paths</ Appbar>
       <Container fluid={false}>
         <div style={{ space }} >
+          <br />
+          <br />
           <SignUp />
         </div>
       </Container>
