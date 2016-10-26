@@ -1,9 +1,9 @@
 .vcenter{
     color: #fff;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100px;
+    margin: auto;
+
+
 }
 
 .introDiv{
@@ -17,4 +17,20 @@
 .logo{
   width:120px;
   margin: 30px;
+}
+.signinLogo{
+  display: block;
+  margin: auto;
+  width:120px;
+
+}
+.introText{
+  color:#fff;
+  font-stretch: expanded;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+.appbar{
+  background-color: #E0E0E0;
+  font-size:15px;
 }

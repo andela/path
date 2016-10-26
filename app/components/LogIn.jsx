@@ -7,7 +7,7 @@ import Button from 'muicss/lib/react/button';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Panel from 'muicss/lib/react/panel';
-import src from 'file!../images/MainLogo.png';
+import src from 'file!../images/logo6.png';
 import './style.css';
 
 
@@ -18,23 +18,23 @@ const SignUp = () => {
       <Col lg="8" sm="12" xs="12" className="introDiv">
         <Col className="mui--pull-left" lg="4">
           <div className="vcenter">
-            <Col lg="12" className="mui--visible-xl-block mui--visible-lg-block">
-              <img className="mui--pull-right logo" src={src} alt="logo" />
-            </Col>
-            <Col>
-              <h1 className="mui--text-center">Register</h1>
+            <br /><br />
+
+            <Col lg="2" sm="12" xs="12" className="introText mui--text-center">
+              <p>WELCOME TO PATH </p>
             </Col>
           </div>
         </Col>
         <Col lg="7" sm="12" xs="12" className="mui--pull-right introDiv">
           <Panel className="panel">
+            <Col lg="12" className="mui--visible-xl-block mui--visible-lg-block">
+              <img className="signinLogo" src={src} alt="logo" />
+            </Col>
             <Form>
-              <Input hint="First Name" />
-              <Input hint="Last Name" />
               <Input hint="Email" />
-              <Input hint="Password" type="password"/>
-              <Input hint="Confirm Password" type="password" />
-              <Button variant="raised" className="mui--pull-right" color="primary">register</Button>
+              <Input hint="Password" type="password" />
+              <Button>signup</Button>
+              <Button variant="raised" className="mui--pull-right" color="primary">login</Button>
             </Form>
           </Panel>
         </Col>
