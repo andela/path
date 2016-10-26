@@ -4,7 +4,7 @@
   "description": "The new Andela recruiting platform ",
   "main": "server/index.js",
   "scripts": {
-    "build": "NODE_ENV=development webpack --progress --colors --config ./webpack/webpack.config.dev.js",
+    "build": "NODE_ENV=development webpack --progress --colors -p --config ./webpack/webpack.config.prod.js",
     "prestart": "npm run build",
     "start": "NODE_ENV=production node server/index.js",
     "start:dev": "NODE_ENV=development node server/index.js",
