@@ -6,6 +6,7 @@ import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import SignUp from './components/SignUp.jsx';
 
+
 const Hello = () => {
   const style = { height: '10px' };
   const space = { margin: '200px' };
@@ -24,7 +25,6 @@ const Hello = () => {
 };
 
 const App = () => (
-
   <Hello />
 );
 
