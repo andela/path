@@ -10,6 +10,9 @@ module.exports = {
     path: assetsPath,
     filename: 'bundle.js',
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
     loaders: [{
       test: /\.jsx?$/,
