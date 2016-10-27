@@ -1,11 +1,12 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var assetsPath = path.join(__dirname, '..', 'public', 'assets');
 
 module.exports = {
   entry: [
-    path.join(__dirname, '../app/index.jsx')
+    path.join(__dirname, '../app/index')
   ],
   devtool: 'cheap-module-source-map',
   output: {
@@ -21,6 +22,9 @@ module.exports = {
       test: /\.jsx?$/,
       loader: 'babel-loader',
       exclude: path.join(__dirname, '..', 'node_modules')
+    }, {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract(['css-loader'])
     }]
   },
   plugins: [
@@ -34,6 +38,7 @@ module.exports = {
       compress: {
         warnings: false
       }
-    })
+    }),
+    new ExtractTextPlugin('style.css')
   ]
 };
