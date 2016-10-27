@@ -1,34 +1,22 @@
 import 'muicss/dist/css/mui.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Appbar from 'muicss/lib/react/appbar';
-import Container from 'muicss/lib/react/container';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
-
-const Hello = () => {
-  const space = { margin: '200px' };
-  return (
-    <div >
-      <Appbar className="appbar">Paths</Appbar>
-      <Container fluid={false}>
-        <div style={{ space }} >
-          <br />
-          <br />
-          <SignUp />
-          <br />
-          <br />
-          <h2> Login </h2>
-          <LogIn />
-
-        </div>
-      </Container>
-    </div>
-     );
-};
+import Layout from './components/Layout';
+import NotFound from './components/NotFound';
+import Home from './components/Home';
 
 const App = () => (
-  <Hello />
+  <Router history={browserHistory}>
+    <Route path="/" component={Layout}>
+      <IndexRoute component={Home} />
+      <Route path="login" component={LogIn} />
+      <Route path="signup" component={SignUp} />
+      <Route path="*" component={NotFound} />
+    </Route>
+  </Router>
 );
 
 ReactDOM.render(<App />, document.getElementById('app'));
