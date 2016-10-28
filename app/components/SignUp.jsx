@@ -1,6 +1,6 @@
 /* eslint import/no-unresolved: "off"*/
 /* eslint import/no-extraneous-dependencies: "off"*/
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Form from 'muicss/lib/react/form';
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
@@ -11,7 +11,7 @@ import src from 'file!../images/MainLogo.png';
 import './style.css';
 
 
-const SignUp = () => {
+const SignUp = (props) => {
   return (
 
     <Row>
@@ -28,12 +28,12 @@ const SignUp = () => {
         </Col>
         <Col lg="7" sm="12" xs="12" className="mui--pull-right introDiv">
           <Panel className="panel">
-            <Form>
-              <Input hint="First Name" />
-              <Input hint="Last Name" />
-              <Input hint="Email" />
-              <Input hint="Password" type="password"/>
-              <Input hint="Confirm Password" type="password" />
+            <Form onSubmit={props.onSubmit}>
+              <Input hint="First Name" name="first_name" />
+              <Input hint="Last Name" name="last_name" />
+              <Input hint="Email" name="email" />
+              <Input hint="Password" type="password" name="password" />
+              <Input hint="Confirm Password" type="password" name="confirm_password" />
               <Button variant="raised" className="mui--pull-right" color="primary">register</Button>
             </Form>
           </Panel>
@@ -41,6 +41,10 @@ const SignUp = () => {
       </Col>
     </Row>
   );
+};
+
+SignUp.propTypes = {
+  onSubmit: PropTypes.func
 };
 
 module.exports = SignUp;

@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const router = require('./router');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -20,6 +22,9 @@ if (process.env.NODE_ENV === 'development') {
   app.use(webpackHotMiddleware(compiler));
 }
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(router);
 app.use(express.static('public'));
 
 app.get('*', (req, res) => {
