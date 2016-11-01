@@ -7,7 +7,7 @@ import Button from 'muicss/lib/react/button';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Panel from 'muicss/lib/react/panel';
-import src from 'file!../images/MainLogo.png';
+import src from '../images/MainLogo.png';
 import './style.css';
 
 

@@ -21,11 +21,17 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.jsx?$/,
-      loader: 'babel-loader',
+      loader: 'babel',
       exclude: path.join(__dirname, '..', 'node_modules')
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract(['css-loader'])
+      loader: ExtractTextPlugin.extract(['css'])
+    }, {
+      test: /\.scss$/,
+      loaders: ['style', 'css', 'sass']
+    }, {
+      test: /\.(png|jpg|ico|svg)$/,
+      loader: 'file'
     }]
   },
   plugins: [

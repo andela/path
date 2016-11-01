@@ -1,0 +1,27 @@
+.header {
+  height: 58px;
+
+  .header__vertical-divider {
+    height: 52px;
+    border-right: 1px solid #3154D5;
+    display: inline-block;
+    padding-right: 11px
+  }
+
+  .header__logo {
+    transform: translateY(-20px);
+  }
+
+  .header__nav-drawer {
+    transform: translateY(-15px) !important; // Override material-ui inline style
+  }
+
+  .header__user-avatar {
+    cursor: pointer;
+    transform: translateY(-10px);
+  }
+
+  .header__caret-down {
+    transform: translateX(-10px) !important; // Override material-ui inline style
+  }
+}

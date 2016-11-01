@@ -2,11 +2,14 @@ import 'muicss/dist/css/mui.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import SignUp from './containers/SignUpContainer';
 import LogIn from './containers/LogInContainer';
-import Layout from './components/Layout';
+import Layout from './components/Layout/Layout';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
+
+injectTapEventPlugin();
 
 const App = () => (
   <Router history={browserHistory}>
