@@ -4,11 +4,11 @@ import { browserHistory } from 'react-router';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
-
 import Home from 'material-ui/svg-icons/action/home';
-import Check from 'material-ui/svg-icons/toggle/check-box';
-import DeviceHub from 'material-ui/svg-icons/hardware/device-hub';
-import Settings from 'material-ui/svg-icons/action/settings';
+import Check from 'material-ui/svg-icons/image/brightness-7';
+import Group from 'material-ui/svg-icons/social/group';
+import TrendingUp from 'material-ui/svg-icons/action/Trending-Up';
+import Tools from 'material-ui/svg-icons/action/extension';
 
 function SideBar(props) {
   const style = {
@@ -23,12 +23,12 @@ function SideBar(props) {
     overflow: 'hidden',
     transitionDuration: '0.6s',
   };
-
+  const icon = 'rgb(51, 89, 223)';
   return (
     <Menu autoWidth={false} style={style}>
       <MenuItem
         primaryText="Home"
-        leftIcon={<Home />}
+        leftIcon={<Home color={icon} />}
         onClick={() => {
           browserHistory.push('/');
           if (!props.collapsed) {
@@ -37,13 +37,13 @@ function SideBar(props) {
         }}
       />
       <Divider />
-      <MenuItem primaryText="Cycles" leftIcon={<Check />} />
+      <MenuItem primaryText="Cycles" leftIcon={<Check color={icon} />} />
       <Divider />
-      <MenuItem primaryText="Applicants" leftIcon={<DeviceHub />} />
+      <MenuItem primaryText="Applicants" leftIcon={<Group color={icon} />} />
       <Divider />
-      <MenuItem primaryText="Tools" leftIcon={<Settings />} />
+      <MenuItem primaryText="Tools" leftIcon={<Tools color={icon} />} />
       <Divider />
-      <MenuItem primaryText="Analytics" leftIcon={<Settings />} />
+      <MenuItem primaryText="Analytics" leftIcon={<TrendingUp color={icon} />} />
       <Divider />
     </Menu>
   );
