@@ -1,9 +1,9 @@
 import React from 'react';
 import request from 'superagent';
 import { Notification } from 'react-notification';
-import LogIn from '../components/LogIn';
+import SignUp from '../../components/Auth/SignUp';
 
-class LogInContainer extends React.Component {
+class SignUpContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,18 +15,21 @@ class LogInContainer extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    request.post('/login').send({
+    request.post('/signup').send({
+      first_name: event.target.first_name.value,
+      last_name: event.target.last_name.value,
       email: event.target.email.value,
       password: event.target.password.value,
+      confirm_password: event.target.confirm_password.value,
     }).then(() => {
       this.setState({
         showSnackbar: true,
-        snackbarText: 'Log in successful'
+        snackbarText: 'Sign up successful'
       });
     }).catch(() => {
       this.setState({
         showSnackbar: true,
-        snackbarText: 'Log in failed'
+        snackbarText: 'Sign up failed'
       });
     });
   }
@@ -34,7 +37,7 @@ class LogInContainer extends React.Component {
   render() {
     return (
       <div>
-        <LogIn onSubmit={this.handleSubmit} />
+        <SignUp onSubmit={this.handleSubmit} />
         <Notification
           isActive={this.state.showSnackbar}
           message={this.state.snackbarText}
@@ -46,4 +49,4 @@ class LogInContainer extends React.Component {
   }
 }
 
-module.exports = LogInContainer;
+module.exports = SignUpContainer;
