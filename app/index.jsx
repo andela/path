@@ -8,6 +8,7 @@ import LogIn from './containers/Auth/LogInContainer';
 import Layout from './components/Layout/Layout';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
+import Profile from './components/profile';
 
 injectTapEventPlugin();
 
@@ -17,6 +18,7 @@ const App = () => (
       <IndexRoute component={Home} />
       <Route path="login" component={LogIn} />
       <Route path="signup" component={SignUp} />
+      <Route path="profile" component={Profile} />
       <Route path="*" component={NotFound} />
     </Route>
   </Router>
