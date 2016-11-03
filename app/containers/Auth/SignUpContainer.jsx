@@ -1,6 +1,6 @@
 import React from 'react';
 import request from 'superagent';
-import { Notification } from 'react-notification';
+import Snackbar from 'material-ui/Snackbar';
 import SignUp from '../../components/Auth/SignUp';
 
 class SignUpContainer extends React.Component {
@@ -38,11 +38,10 @@ class SignUpContainer extends React.Component {
     return (
       <div>
         <SignUp onSubmit={this.handleSubmit} />
-        <Notification
-          isActive={this.state.showSnackbar}
+        <Snackbar
+          open={this.state.showSnackbar}
           message={this.state.snackbarText}
-          dismissAfter={2500}
-          onDismiss={() => {}}
+          autoHideDuration={2500}
         />
       </div>
     );

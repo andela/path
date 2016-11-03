@@ -1,6 +1,6 @@
 import React from 'react';
 import request from 'superagent';
-import { Notification } from 'react-notification';
+import Snackbar from 'material-ui/Snackbar';
 import LogIn from '../../components/Auth/LogIn';
 
 class LogInContainer extends React.Component {
@@ -35,11 +35,10 @@ class LogInContainer extends React.Component {
     return (
       <div>
         <LogIn onSubmit={this.handleSubmit} />
-        <Notification
-          isActive={this.state.showSnackbar}
+        <Snackbar
+          open={this.state.showSnackbar}
           message={this.state.snackbarText}
-          dismissAfter={2500}
-          onDismiss={() => {}}
+          autoHideDuration={2500}
         />
       </div>
     );
