@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import request from 'superagent';
 import Snackbar from 'material-ui/Snackbar';
 import SignUp from '../../components/Auth/SignUp';
@@ -15,23 +16,25 @@ class SignUpContainer extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    request.post('/signup').send({
-      first_name: event.target.first_name.value,
-      last_name: event.target.last_name.value,
-      email: event.target.email.value,
-      password: event.target.password.value,
-      confirm_password: event.target.confirm_password.value,
-    }).then(() => {
-      this.setState({
-        showSnackbar: true,
-        snackbarText: 'Sign up successful'
+    request.post('/api/v1/path/signup')
+      .type('form')
+      .send({
+        first_name: event.target.first_name.value,
+        last_name: event.target.last_name.value,
+        email: event.target.email.value,
+        password: event.target.password.value,
+        confirm_password: event.target.confirm_password.value,
+      })
+      .then((res) => {
+        window.localStorage.setItem('token', res.body.token);
+        browserHistory.push('/');
+      })
+      .catch(() => {
+        this.setState({
+          showSnackbar: true,
+          snackbarText: 'Sign up failed'
+        });
       });
-    }).catch(() => {
-      this.setState({
-        showSnackbar: true,
-        snackbarText: 'Sign up failed'
-      });
-    });
   }
 
   render() {

@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const proxy = require('express-http-proxy');
 /* eslint-disable import/no-extraneous-dependencies, global-require */
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -14,6 +15,8 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: webpackConfig.output.publicPath,
 }));
 app.use(webpackHotMiddleware(compiler));
+
+app.use('/api/v1/path', proxy(process.env.MOCK_SERVER_URL || 'localhost:8080'));
 
 app.use(express.static('public'));
 

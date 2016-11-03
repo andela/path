@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import request from 'superagent';
 import Snackbar from 'material-ui/Snackbar';
 import LogIn from '../../components/Auth/LogIn';
@@ -15,20 +16,22 @@ class LogInContainer extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    request.post('/login').send({
-      email: event.target.email.value,
-      password: event.target.password.value,
-    }).then(() => {
-      this.setState({
-        showSnackbar: true,
-        snackbarText: 'Log in successful'
+    request.post('/api/v1/path/login')
+      .type('form')
+      .send({
+        email: event.target.email.value,
+        password: event.target.password.value,
+      })
+      .then((res) => {
+        window.localStorage.setItem('token', res.body.token);
+        browserHistory.push('/');
+      })
+      .catch(() => {
+        this.setState({
+          showSnackbar: true,
+          snackbarText: 'Log in failed'
+        });
       });
-    }).catch(() => {
-      this.setState({
-        showSnackbar: true,
-        snackbarText: 'Log in failed'
-      });
-    });
   }
 
   render() {

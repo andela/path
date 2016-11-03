@@ -14,7 +14,7 @@ import './style.css';
 const LogIn = (props) => {
   return (
     <Row>
-      <Col lg="8" sm="12" xs="12" className="introDiv">
+      <Col lg="8" lg-offset="2" sm="12" xs="12" className="introDiv">
         <Col className="mui--pull-left" lg="4">
           <div className="vcenter">
             <br /><br />

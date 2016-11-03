@@ -1,0 +1,33 @@
+title: Stubs for some test API
+port: 8080
+endpoints:
+- url: /login
+  description: Log In
+  method: POST
+  validation:
+    params:
+    - key: email
+      value: /r/\S+@\S+.\S+
+    - key: password
+      value: /r/.+
+  response:
+    headers:
+     - key: Content-Type
+       value: application/json
+    data: eyJ0b2tlbiI6ICJlZTk3NzgwNmQ3Mjg2NTEwZGE4YjlhNzQ5MmJhNThlMjQ4NGMwZWNjIn0K
+    status: 200
+- url: /signup
+  description: Sign Up
+  method: POST
+  validation:
+    params:
+    - key: email
+      value: /r/\S+@\S+.\S+
+    - key: password
+      value: /r/.+
+  response:
+    headers:
+     - key: Content-Type
+       value: application/json
+    data: eyJ0b2tlbiI6ICJlZTk3NzgwNmQ3Mjg2NTEwZGE4YjlhNzQ5MmJhNThlMjQ4NGMwZWNjIn0K
+    status: 200

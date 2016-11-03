@@ -13,9 +13,8 @@ import './style.css';
 
 const SignUp = (props) => {
   return (
-
     <Row>
-      <Col lg="8" sm="12" xs="12" className="introDiv">
+      <Col lg="8" lg-offset="2" sm="12" xs="12" className="introDiv">
         <Col className="mui--pull-left" lg="4">
           <div className="vcenter">
             <Col lg="12" className="mui--visible-xl-block mui--visible-lg-block">
