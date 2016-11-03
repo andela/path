@@ -6,12 +6,12 @@ import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Select from 'muicss/lib/react/select';
 import Option from 'muicss/lib/react/option';
-import testAvatar from '../images/test_avatar.jpg';
+import testAvatar from '../../images/test_avatar.jpg';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Panel from 'muicss/lib/react/panel';
-import src from '../images/MainLogo.png';
-import './style.css';
+import src from '../../images/MainLogo.png';
+import './Profile.css';
 
 
 const SignUp = (props) => {

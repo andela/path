@@ -8,7 +8,7 @@ import LogIn from './containers/Auth/LogInContainer';
 import Layout from './components/Layout/Layout';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
-import Profile from './components/profile';
+import Profile from './components/Profile/Profile';
 
 injectTapEventPlugin();
 
