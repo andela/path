@@ -1,12 +1,10 @@
 const express = require('express');
 const path = require('path');
 const proxy = require('express-http-proxy');
-/* eslint-disable import/no-extraneous-dependencies, global-require */
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpackConfig = require('./webpack/webpack.config.dev');
-/* eslint-enable import/no-extraneous-dependencies, global-require */
 
 const app = express();
 const compiler = webpack(webpackConfig);

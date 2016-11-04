@@ -2,10 +2,20 @@
   "extends": "airbnb",
   "rules": {
     "comma-dangle": 0,
-    "arrow-body-style": 0
+    "arrow-body-style": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/test/setup.js",
+          "**/test/**/*.test.jsx",
+          "**/devserver.js"
+        ]
+      }
+    ]
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "mocha": true
   }
 }
-
