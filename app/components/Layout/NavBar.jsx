@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import AppBar from 'material-ui/AppBar';
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
@@ -36,7 +37,10 @@ class NavBar extends React.Component {
         targetOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
       >
-        <MenuItem primaryText={'Refresh'} />
+        <MenuItem
+          primaryText={'Profile'}
+          onTouchTap={() => { browserHistory.push('profile'); }}
+        />
         <MenuItem primaryText={'Help'} />
         <MenuItem
           primaryText={'Logout'}

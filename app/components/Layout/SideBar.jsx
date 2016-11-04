@@ -1,13 +1,12 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 import Home from 'material-ui/svg-icons/action/home';
 import Check from 'material-ui/svg-icons/image/brightness-7';
 import Group from 'material-ui/svg-icons/social/group';
-import TrendingUp from 'material-ui/svg-icons/action/Trending-Up';
+import TrendingUp from 'material-ui/svg-icons/action/trending-up';
 import Tools from 'material-ui/svg-icons/action/extension';
 
 function SideBar(props) {

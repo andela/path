@@ -24,7 +24,7 @@ class LogInContainer extends React.Component {
       })
       .then((res) => {
         window.localStorage.setItem('token', res.body.token);
-        browserHistory.push('/');
+        browserHistory.push('/profile');
       })
       .catch(() => {
         this.setState({

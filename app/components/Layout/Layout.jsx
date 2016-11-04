@@ -1,22 +1,10 @@
 import React from 'react';
-import MuiFramework from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import { browserHistory } from 'react-router';
 import Overlay from 'material-ui/internal/Overlay';
 import NavBar from './NavBar';
 import SideBar from './SideBar';
 import testAvatar from '../../images/test_avatar.jpg';
 import './Layout.scss';
-
-const andelaBaseTheme = getMuiTheme({
-  appBar: {
-    color: '#3359DF',
-    padding: 30,
-    height: 58,
-  },
-  palette: {
-    primary1Color: '#3359DF',
-  },
-});
 
 class Layout extends React.Component {
   constructor(props) {
@@ -25,6 +13,16 @@ class Layout extends React.Component {
       sidebarCollapsed: true
     };
     this.toggleSidebar = this.toggleSidebar.bind(this);
+    this.handleLogout = () => {
+      window.localStorage.removeItem('token');
+      browserHistory.push('/login');
+    };
+  }
+
+  componentWillMount() {
+    if (!window.localStorage.getItem('token')) {
+      browserHistory.replace('/login');
+    }
   }
 
   toggleSidebar() {
@@ -40,34 +38,31 @@ class Layout extends React.Component {
     };
 
     return (
-      <MuiFramework muiTheme={andelaBaseTheme}>
-        <div className="root">
-          <NavBar
-            toggleSidebar={this.toggleSidebar}
-            picture={testAvatar}
-            onLogout={this.props.onLogout}
+      <div className="root">
+        <NavBar
+          toggleSidebar={this.toggleSidebar}
+          picture={testAvatar}
+          onLogout={this.handleLogout}
+        />
+        <SideBar
+          collapsed={this.state.sidebarCollapsed}
+          toggleSidebar={this.toggleSidebar}
+        />
+        <div className="main">
+          <Overlay
+            show={!this.state.sidebarCollapsed}
+            style={sidebarStyleOverlay}
+            onTouchTap={this.collapseSidebarIfOpen}
           />
-          <SideBar
-            collapsed={this.state.sidebarCollapsed}
-            toggleSidebar={this.toggleSidebar}
-          />
-          <div className="main">
-            <Overlay
-              show={!this.state.sidebarCollapsed}
-              style={sidebarStyleOverlay}
-              onTouchTap={this.collapseSidebarIfOpen}
-            />
-            {this.props.children}
-          </div>
+          {this.props.children}
         </div>
-      </MuiFramework>
+      </div>
     );
   }
 }
 
 Layout.propTypes = {
   children: React.PropTypes.element,
-  onLogout: React.PropTypes.func
 };
 
 export default Layout;

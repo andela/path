@@ -1,25 +1,20 @@
-/* eslint import/no-unresolved: "off"*/
-/* eslint import/no-extraneous-dependencies: "off"*/
-import React, { PropTypes } from 'react';
+import React from 'react';
 import Form from 'muicss/lib/react/form';
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Select from 'muicss/lib/react/select';
 import Option from 'muicss/lib/react/option';
-import testAvatar from '../../images/test_avatar.jpg';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
-import Panel from 'muicss/lib/react/panel';
-import src from '../../images/MainLogo.png';
 import './Profile.css';
 
 
-const SignUp = (props) => {
+const Profile = () => {
   return (
     <Row>
       <Col lg="9" sm="12" xs="12" md="12" >
         <Col xs-offset="2" lg="8" sm="12" xs="12" >
-          <Form onSubmit={props.onSubmit}>
+          <Form onSubmit={e => e.preventDefault()}>
             <Row className="profiler mui--z1" lg="3">
               <Col className="profilePic" lg="4" style={{ backgroundImage: 'url(/assets/73cf6e8ac0aca7020827a2796ed5aa89.jpg)', backgroundSize: 'cover' }} />
               <Col lg="6" className="" style={{ padding: '50px' }}>
@@ -59,8 +54,4 @@ const SignUp = (props) => {
   );
 };
 
-SignUp.propTypes = {
-  onSubmit: PropTypes.func
-};
-
-module.exports = SignUp;
+module.exports = Profile;

@@ -1,6 +1,5 @@
-/* eslint import/no-unresolved: "off"*/
-/* eslint import/no-extraneous-dependencies: "off"*/
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import Form from 'muicss/lib/react/form';
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
@@ -9,7 +8,6 @@ import Col from 'muicss/lib/react/col';
 import Panel from 'muicss/lib/react/panel';
 import src from '../../images/MainLogo.png';
 import './style.css';
-
 
 const SignUp = (props) => {
   return (
@@ -33,6 +31,7 @@ const SignUp = (props) => {
               <Input hint="Email" name="email" />
               <Input hint="Password" type="password" name="password" />
               <Input hint="Confirm Password" type="password" name="confirm_password" />
+              <Link to="/login">Log in</Link>
               <Button variant="raised" className="mui--pull-right" color="primary">register</Button>
             </Form>
           </Panel>
