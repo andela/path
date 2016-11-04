@@ -10,7 +10,7 @@ import LogIn from './containers/Auth/LogInContainer';
 import Layout from './components/Layout/Layout';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
-import Profile from './components/Profile/Profile';
+import Profile from './containers/Profile/ProfileContainer';
 
 const andelaBaseTheme = getMuiTheme({
   appBar: {

@@ -8,13 +8,12 @@ import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import './Profile.css';
 
-
-const Profile = () => {
+const Profile = (props) => {
   return (
     <Row>
-      <Col lg="9" sm="12" xs="12" md="12" >
+      <Col lg-offset="1" lg="10" sm="12" xs="12" md="12" >
         <Col xs-offset="2" lg="8" sm="12" xs="12" >
-          <Form onSubmit={e => e.preventDefault()}>
+          <Form onSubmit={props.onSubmit}>
             <Row className="profiler mui--z1" lg="3">
               <Col className="profilePic" lg="4" style={{ backgroundImage: 'url(/assets/73cf6e8ac0aca7020827a2796ed5aa89.jpg)', backgroundSize: 'cover' }} />
               <Col lg="6" className="" style={{ padding: '50px' }}>
@@ -43,15 +42,17 @@ const Profile = () => {
                 <Option value="high_school" label="High School" />
                 <Option value="others" label="others" />
               </Select>
-              <Button variant="raised" className="mui--pull-right" color="primary">register</Button>
+              <Button variant="raised" className="mui--pull-right" color="primary">Save</Button>
             </Row>
-
           </Form>
         </Col>
       </Col>
-
     </Row>
   );
+};
+
+Profile.propTypes = {
+  onSubmit: React.PropTypes.func.isRequired,
 };
 
 module.exports = Profile;

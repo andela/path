@@ -31,3 +31,17 @@ endpoints:
        value: application/json
     data: eyJ0b2tlbiI6ICJlZTk3NzgwNmQ3Mjg2NTEwZGE4YjlhNzQ5MmJhNThlMjQ4NGMwZWNjIn0K
     status: 200
+
+- url: /profile
+  description: Update profile
+  method: PUT
+  validation:
+    headers:
+    - key: X-Auth-Token
+      value: ee977806d7286510da8b9a7492ba58e2484c0ecc
+  response:
+    headers:
+     - key: Content-Type
+       value: application/json
+    data: eyJzdWNjZXNzIjogdHJ1ZX0=
+    status: 200
