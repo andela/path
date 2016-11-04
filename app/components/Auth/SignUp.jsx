@@ -1,17 +1,17 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import Form from 'muicss/lib/react/form';
-import Input from 'muicss/lib/react/input';
-import Button from 'muicss/lib/react/button';
+import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
-import Panel from 'muicss/lib/react/panel';
+import Paper from 'material-ui/Paper';
 import src from '../../images/MainLogo.png';
 import './style.css';
 
 const SignUp = (props) => {
   return (
-    <Row>
+    <Row className="centerblock">
       <Col lg="8" lg-offset="2" sm="12" xs="12" className="introDiv">
         <Col className="mui--pull-left" lg="4">
           <div className="vcenter">
@@ -24,17 +24,32 @@ const SignUp = (props) => {
           </div>
         </Col>
         <Col lg="7" sm="12" xs="12" className="mui--pull-right introDiv">
-          <Panel className="panel">
-            <Form onSubmit={props.onSubmit}>
-              <Input hint="First Name" name="first_name" />
-              <Input hint="Last Name" name="last_name" />
-              <Input hint="Email" name="email" />
-              <Input hint="Password" type="password" name="password" />
-              <Input hint="Confirm Password" type="password" name="confirm_password" />
-              <Link to="/login">Log in</Link>
-              <Button variant="raised" className="mui--pull-right" color="primary">register</Button>
-            </Form>
-          </Panel>
+          <Paper className="panel">
+
+            <form onSubmit={props.onSubmit}>
+              <TextField fullWidth hintText="First Name" name="first_name" />
+              <TextField fullWidth hintText="Last Name" name="last_name" />
+              <TextField fullWidth hintText="Email" name="email" />
+              <TextField fullWidth hintText="Password" type="password" name="password" />
+              <TextField fullWidth hintText="Confirm Password" type="password" name="confirm_password" />
+
+              <FlatButton
+                href="/logIn"
+                type="button"
+                style={{ marginTop: '30px' }}
+                primary
+                label="Login"
+              />
+
+              <RaisedButton
+                primary
+                style={{ marginTop: '30px', float: 'right' }}
+                type="submit"
+                label="Register"
+              />
+
+            </form>
+          </Paper>
         </Col>
       </Col>
     </Row>

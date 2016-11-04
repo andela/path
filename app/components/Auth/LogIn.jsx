@@ -1,18 +1,17 @@
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
-import Form from 'muicss/lib/react/form';
-import Input from 'muicss/lib/react/input';
-import Button from 'muicss/lib/react/button';
+import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
-import Panel from 'muicss/lib/react/panel';
+import Paper from 'material-ui/Paper';
 import src from '../../images/logo6.png';
 import './style.css';
 
 const LogIn = (props) => {
   return (
-    <Row>
-      <Col lg="8" lg-offset="2" sm="12" xs="12" className="introDiv">
+    <Row className="centerblock">
+      <Col lg="9" sm="12" xs="12" className="introDiv">
         <Col className="mui--pull-left" lg="4">
           <div className="vcenter">
             <br /><br />
@@ -22,17 +21,30 @@ const LogIn = (props) => {
           </div>
         </Col>
         <Col lg="7" sm="12" xs="12" className="mui--pull-right introDiv">
-          <Panel className="panel">
+          <Paper className="panel">
             <Col lg="12" className="mui--visible-xl-block mui--visible-lg-block">
               <img className="signinLogo" src={src} alt="logo" />
             </Col>
-            <Form onSubmit={props.onSubmit}>
-              <Input hint="Email" name="email" />
-              <Input hint="Password" type="password" name="password" />
-              <Link to="/signup">Sign up</Link>
-              <Button variant="raised" className="mui--pull-right" color="primary">login</Button>
-            </Form>
-          </Panel>
+            <form onSubmit={props.onSubmit}>
+              <TextField fullWidth hintText="Email" name="email" />
+
+              <TextField fullWidth hintText="Password" type="password" name="password" />
+
+              <FlatButton
+                href="/signup"
+                type="button"
+                style={{ marginTop: '30px' }}
+                primary
+                label="Signup"
+              />
+              <RaisedButton
+                type="submit"
+                style={{ marginTop: '30px', float: 'right' }}
+                primary
+                label="Login"
+              />
+            </form>
+          </Paper>
         </Col>
       </Col>
     </Row>
@@ -40,7 +52,7 @@ const LogIn = (props) => {
 };
 
 LogIn.propTypes = {
-  onSubmit: PropTypes.func
+  onSubmit: React.PropTypes.func.isRequired,
 };
 
 module.exports = LogIn;

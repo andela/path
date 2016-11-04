@@ -12,7 +12,9 @@
   min-height: 300px
 }
 .panel{
-  margin-bottom:1px;
+  margin-bottom:0px;
+  min-height:300px;
+  padding:10px;
 }
 .logo{
   width:120px;
@@ -33,4 +35,16 @@
 .appbar{
   background-color: #E0E0E0;
   font-size:15px;
+}
+.centerblock{
+width: 60%;
+margin: auto;
+bottom: 0;
+position: absolute;
+top: 0;
+right: 0;
+padding: 0px;
+left: 0;
+max-height: 320px;
+min-height: 200;
 }
