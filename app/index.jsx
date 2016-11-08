@@ -1,16 +1,13 @@
 import 'muicss/dist/css/mui.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { syncHistoryWithStore } from 'react-router-redux';
 import MuiFramework from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import SignUp from './containers/Auth/SignUpContainer';
-import LogIn from './containers/Auth/LogInContainer';
-import Layout from './components/Layout/Layout';
-import NotFound from './components/NotFound';
-import Home from './components/Home';
-import Profile from './containers/Profile/ProfileContainer';
+import Root from './containers/Root';
+import configureStore from './store/configureStore';
 
 const andelaBaseTheme = getMuiTheme({
   appBar: {
@@ -25,17 +22,12 @@ const andelaBaseTheme = getMuiTheme({
 
 injectTapEventPlugin();
 
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
+
 const App = () => (
   <MuiFramework muiTheme={andelaBaseTheme}>
-    <Router history={browserHistory}>
-      <Route path="login" component={LogIn} />
-      <Route path="signup" component={SignUp} />
-      <Route path="/" component={Layout}>
-        <IndexRoute component={Home} />
-        <Route path="profile" component={Profile} />
-        <Route path="*" component={NotFound} />
-      </Route>
-    </Router>
+    <Root store={store} history={history} />
   </MuiFramework>
 );
 
