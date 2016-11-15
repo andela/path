@@ -4,8 +4,10 @@
   "description": "The new Andela recruiting platform ",
   "main": "server/index.js",
   "scripts": {
+    "clean": "rm -rf public/assets",
     "build": "NODE_ENV=production webpack --progress --colors -p --config ./webpack/webpack.config.prod.js",
-    "start": "node devserver.js",
+    "start": "node server/production.js",
+    "start:dev": "node server/development.js",
     "test": "mocha"
   },
   "repository": {
@@ -19,6 +21,7 @@
   },
   "homepage": "https://github.com/andela/path#readme",
   "dependencies": {
+    "express": "^4.14.0",
     "material-ui": "^0.16.1",
     "muicss": "^0.9.3",
     "react": "^15.3.2",
@@ -45,7 +48,6 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
-    "express": "^4.14.0",
     "express-http-proxy": "^0.10.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
