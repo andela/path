@@ -1,0 +1,50 @@
+.vcenter{
+    color: #fff;
+    display: block;
+    margin: auto;
+
+
+}
+
+.introDiv{
+  background-color:  rgb(51, 89, 200);
+  padding:0;
+  min-height: 300px
+}
+.panel{
+  margin-bottom:0px;
+  min-height:300px;
+  padding:10px;
+}
+.logo{
+  width:120px;
+  margin: 30px;
+}
+.signinLogo{
+  display: block;
+  margin: auto;
+  width:120px;
+
+}
+.introText{
+  color:#fff;
+  font-stretch: expanded;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+.appbar{
+  background-color: #E0E0E0;
+  font-size:15px;
+}
+.centerblock{
+width: 60%;
+margin: auto;
+bottom: 0;
+position: absolute;
+top: 0;
+right: 0;
+padding: 0px;
+left: 0;
+max-height: 320px;
+min-height: 200;
+}
