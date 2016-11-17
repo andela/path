@@ -10,5 +10,8 @@
   "env": {
     "browser": true,
     "mocha": true
+  },
+  "globals": {
+    "API_GATEWAY_URL": true
   }
 }

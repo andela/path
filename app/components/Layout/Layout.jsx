@@ -1,6 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import Overlay from 'material-ui/internal/Overlay';
+import cookie from 'react-cookie';
 import NavBar from './NavBar';
 import SideBar from './SideBar';
 import testAvatar from '../../images/test_avatar.jpg';
@@ -14,13 +15,13 @@ class Layout extends React.Component {
     };
     this.toggleSidebar = this.toggleSidebar.bind(this);
     this.handleLogout = () => {
-      window.localStorage.removeItem('token');
-      browserHistory.push('/login');
+      window.location = `${API_GATEWAY_URL}/logout?redirect_url=${window.location.protocol}//${window.location.host}/login`;
     };
   }
 
   componentWillMount() {
-    if (!window.localStorage.getItem('token')) {
+    const token = cookie.load('jwt-token');
+    if (!token) {
       browserHistory.replace('/login');
     }
   }

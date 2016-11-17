@@ -38,7 +38,8 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
-      }
+      },
+      API_GATEWAY_URL: JSON.stringify(process.env.API_GATEWAY_URL || 'https://api-staging.andela.com')
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

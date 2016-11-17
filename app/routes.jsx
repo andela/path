@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 import SignUp from './containers/Auth/SignUpContainer';
-import LogIn from './containers/Auth/LogInContainer';
+import LogIn from './components/Auth/GoogleLogIn';
 import Layout from './components/Layout/Layout';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
