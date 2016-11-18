@@ -6,7 +6,7 @@ import IconMenu from 'material-ui/IconMenu';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import DropdownIcon from 'material-ui/svg-icons/navigation/arrow-drop-down';
 import MenuItem from 'material-ui/MenuItem';
-import Logo from '../../images/logo.png';
+import Logo from 'images/logo.png';
 import './NavBar.scss';
 
 class NavBar extends React.Component {

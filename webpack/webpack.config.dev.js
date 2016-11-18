@@ -16,7 +16,8 @@ module.exports = {
     publicPath: '/assets/'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    root: [ path.resolve('./app') ]
   },
   module: {
     loaders: [{

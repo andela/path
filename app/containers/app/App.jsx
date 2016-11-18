@@ -2,9 +2,9 @@ import React from 'react';
 import { browserHistory } from 'react-router';
 import cookie from 'react-cookie';
 import request from 'superagent';
-import NavBar from '../../components/app/NavBar';
-import SideBar from '../../components/app/SideBar';
-import testAvatar from '../../images/test_avatar.jpg';
+import NavBar from 'components/app/NavBar';
+import SideBar from 'components/app/SideBar';
+import testAvatar from 'images/test_avatar.jpg';
 import './App.scss';
 
 class App extends React.Component {
