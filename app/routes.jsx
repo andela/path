@@ -1,19 +1,18 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import SignUp from './containers/Auth/SignUpContainer';
-import LogIn from './components/Auth/GoogleLogIn';
-import Layout from './components/Layout/Layout';
-import NotFound from './components/NotFound';
-import Home from './components/Home';
-import Profile from './containers/Profile/ProfileContainer';
+import GoogleLogIn from './components/auth/GoogleLogIn';
+import App from './containers/app/App';
+import Guest from './containers/app/Guest';
+import NotFound from './components/app/NotFound';
+import Dashboard from './components/dashboard/Dashboard';
 
 export default (
   <Route path="/">
-    <Route path="login" component={LogIn} />
-    <Route path="signup" component={SignUp} />
-    <Route component={Layout}>
-      <IndexRoute component={Home} />
-      <Route path="profile" component={Profile} />
+    <Route component={Guest}>
+      <Route path="login" component={GoogleLogIn} />
+    </Route>
+    <Route component={App}>
+      <IndexRoute component={Dashboard} />
       <Route path="*" component={NotFound} />
     </Route>
   </Route>

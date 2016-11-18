@@ -1,12 +1,12 @@
 import 'muicss/dist/css/mui.min.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { syncHistoryWithStore } from 'react-router-redux';
 import MuiFramework from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Root from './containers/Root';
+import Root from './containers/app/Root';
 import configureStore from './store/configureStore';
 
 const andelaBaseTheme = getMuiTheme({
@@ -25,10 +25,9 @@ injectTapEventPlugin();
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
-const App = () => (
+render(
   <MuiFramework muiTheme={andelaBaseTheme}>
     <Root store={store} history={history} />
-  </MuiFramework>
+  </MuiFramework>,
+  document.getElementById('app')
 );
-
-ReactDOM.render(<App />, document.getElementById('app'));

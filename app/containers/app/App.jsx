@@ -1,14 +1,13 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import Overlay from 'material-ui/internal/Overlay';
 import cookie from 'react-cookie';
 import request from 'superagent';
-import NavBar from './NavBar';
-import SideBar from './SideBar';
+import NavBar from '../../components/app/NavBar';
+import SideBar from '../../components/app/SideBar';
 import testAvatar from '../../images/test_avatar.jpg';
-import './Layout.scss';
+import './App.scss';
 
-class Layout extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,13 +45,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const sidebarStyleOverlay = {
-      zIndex: 1200,
-      pointerEvents: !this.state.sidebarCollapsed ? 'auto' : 'none',
-    };
-
     const { user } = this.state;
-
     return (
       <div className="root">
         <NavBar
@@ -65,11 +58,6 @@ class Layout extends React.Component {
           toggleSidebar={this.toggleSidebar}
         />
         <div className="main">
-          <Overlay
-            show={!this.state.sidebarCollapsed}
-            style={sidebarStyleOverlay}
-            onTouchTap={this.collapseSidebarIfOpen}
-          />
           {this.props.children}
         </div>
       </div>
@@ -77,8 +65,8 @@ class Layout extends React.Component {
   }
 }
 
-Layout.propTypes = {
+App.propTypes = {
   children: React.PropTypes.element,
 };
 
-export default Layout;
+export default App;

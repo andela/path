@@ -1,11 +1,11 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Home from '../../app/components/Home';
+import Dashboard from '../../app/components/dashboard/Dashboard';
 
-describe('<Home />', () => {
+describe('<Dashboard />', () => {
   it('renders welcome message', () => {
-    const wrapper = shallow(<Home />);
+    const wrapper = shallow(<Dashboard />);
     expect(wrapper.find('div')).to.have.text(' Welcome to Path! ');
   });
 });
