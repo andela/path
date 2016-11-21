@@ -16,19 +16,17 @@ class GoogleLogIn extends React.Component {
     const wrapperStyle = {
       height: '100vh',
       display: 'flex',
-      alignContent: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center'
     };
-    // TODO: Style login with Google button more appropriately.
     return (
       <div style={wrapperStyle}>
-        <span style={{ marginTop: '45vh' }}>
+        <span>
           <RaisedButton
             href={`${API_GATEWAY_URL}/login?redirect_url=${window.location.protocol}//${window.location.host}`}
             label="Login with Google"
-            secondary
-            style={{ width: '12em' }}
+            backgroundColor="#ff5722"
+            labelColor="white"
           />
         </span>
       </div>
