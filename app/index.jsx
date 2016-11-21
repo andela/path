@@ -7,6 +7,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import { syncHistoryWithStore } from 'react-router-redux';
 import MuiFramework from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import cookie from 'react-cookie';
 import Root from 'containers/app/Root';
 import configureStore from 'store/configureStore';
 
@@ -23,7 +24,13 @@ const andelaBaseTheme = getMuiTheme({
 
 injectTapEventPlugin();
 
-const store = configureStore();
+const initialState = {
+  auth: {
+    token: cookie.load('jwt-token')
+  }
+};
+
+const store = configureStore(initialState);
 const history = syncHistoryWithStore(browserHistory, store);
 
 render(

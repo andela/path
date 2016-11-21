@@ -1,17 +1,16 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import cookie from 'react-cookie';
-import request from 'superagent';
+import { connect } from 'react-redux';
 import NavBar from 'components/app/NavBar';
 import SideBar from 'components/app/SideBar';
 import testAvatar from 'images/test_avatar.jpg';
+import { fetchCurrentUserIfNeeded } from 'actions/users';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       sidebarCollapsed: true,
-      user: null,
     };
     this.toggleSidebar = this.toggleSidebar.bind(this);
     this.handleLogout = () => {
@@ -19,22 +18,12 @@ class App extends React.Component {
     };
   }
 
-  componentWillMount() {
-    const token = cookie.load('jwt-token');
-    if (!token) {
+  componentDidMount() {
+    if (this.props.token) {
+      this.props.fetchCurrentUserIfNeeded();
+    } else {
       browserHistory.replace('/login');
     }
-    request.get(`${API_GATEWAY_URL}/api/v1/users/me`)
-      .set('Authorization', `Bearer ${cookie.load('jwt-token')}`)
-      .then((res) => {
-        this.setState({
-          user: res.body,
-        });
-      })
-      .catch(() => {
-        cookie.remove('jwt-token');
-        browserHistory.push('/login');
-      });
   }
 
   toggleSidebar() {
@@ -44,7 +33,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { user } = this.state;
+    const { user } = this.props;
     return (
       <div className="root">
         <NavBar
@@ -66,6 +55,21 @@ class App extends React.Component {
 
 App.propTypes = {
   children: React.PropTypes.element,
+  user: React.PropTypes.object,
+  token: React.PropTypes.string,
+  fetchCurrentUserIfNeeded: React.PropTypes.func
 };
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    user: state.auth.userId && state.entities.users[state.auth.userId],
+    token: state.auth.token
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  {
+    fetchCurrentUserIfNeeded
+  }
+)(App);
