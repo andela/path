@@ -5,7 +5,6 @@ import request from 'superagent';
 import NavBar from 'components/app/NavBar';
 import SideBar from 'components/app/SideBar';
 import testAvatar from 'images/test_avatar.jpg';
-import './App.scss';
 
 class App extends React.Component {
   constructor(props) {
