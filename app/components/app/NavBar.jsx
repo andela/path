@@ -27,10 +27,12 @@ class NavBar extends React.Component {
     return (
       <IconMenu
         iconButtonElement={
-          <div>
-            <Avatar src={this.props.picture} size={50} className={'header__user-avatar'} />
-            <IconButton className={'header__caret-down'}><DropdownIcon /></IconButton>
-          </div>
+          <IconButton className={'header__user-menu'}>
+            <div>
+              <Avatar src={this.props.picture} size={50} className={'header__user-avatar'} />
+              <DropdownIcon className={'header__caret-down'} />
+            </div>
+          </IconButton>
         }
         targetOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
