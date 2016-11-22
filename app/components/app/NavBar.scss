@@ -18,10 +18,14 @@
 
   .header__user-avatar {
     cursor: pointer;
-    transform: translateY(-10px);
+    position: absolute;
+    top: 0;
+    right: 28px;
   }
 
   .header__caret-down {
-    transform: translateX(-10px) !important; // Override material-ui inline style
+    top: 12px;
+    position: absolute;
+    right: 0;
   }
 }

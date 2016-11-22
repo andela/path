@@ -15,7 +15,8 @@ module.exports = {
     publicPath: '/assets/'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    root: [ path.resolve('./app') ]
   },
   module: {
     loaders: [{
@@ -38,7 +39,8 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
-      }
+      },
+      API_GATEWAY_URL: JSON.stringify(process.env.API_GATEWAY_URL || 'https://api-staging.andela.com')
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

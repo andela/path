@@ -16,7 +16,8 @@ module.exports = {
     publicPath: '/assets/'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    root: [ path.resolve('./app') ]
   },
   module: {
     loaders: [{
@@ -37,6 +38,9 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      API_GATEWAY_URL: JSON.stringify(process.env.API_GATEWAY_URL || 'https://api-staging.andela.com')
+    }),
     new ExtractTextPlugin('style.css')
   ]
 };
