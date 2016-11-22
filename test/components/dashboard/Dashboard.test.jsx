@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Dashboard from '../../app/components/dashboard/Dashboard';
+import Dashboard from 'components/dashboard/Dashboard';
 
 describe('<Dashboard />', () => {
   it('renders welcome message', () => {

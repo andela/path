@@ -6,7 +6,7 @@ import SideBar from 'components/app/SideBar';
 import testAvatar from 'images/test_avatar.jpg';
 import { fetchCurrentUserIfNeeded } from 'actions/users';
 
-class App extends React.Component {
+export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
