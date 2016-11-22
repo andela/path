@@ -39,14 +39,14 @@ export function fetchCurrentUser() {
         dispatch(receiveCurrentUser(res.body));
       })
       .catch((error) => {
-        dispatch(receiveCurrentUserError(error));
+        dispatch(receiveCurrentUserError(error.response.body));
       });
   };
 }
 
 export function fetchCurrentUserIfNeeded() {
   return (dispatch, getState) => {
-    if (!getState().auth.user) {
+    if (!getState().auth.userId) {
       return dispatch(fetchCurrentUser());
     }
     return Promise.resolve();

@@ -10,3 +10,5 @@ function noop() {
 ['.scss', '.css', '.png', '.jpg', '.svg', '.ico'].forEach((ext) => {
   require.extensions[ext] = noop;
 });
+
+global.API_GATEWAY_URL = 'api-test.example.com';
