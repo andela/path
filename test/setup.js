@@ -1,7 +1,6 @@
 import chai from 'chai';
 import chaiEnzyme from 'chai-enzyme';
 import { jsdom } from 'jsdom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
 chai.use(chaiEnzyme());
 
@@ -27,5 +26,3 @@ Object.keys(window).forEach((property) => {
     global[property] = document.defaultView[property];
   }
 });
-
-injectTapEventPlugin();

@@ -15,7 +15,7 @@ class NavBar extends React.Component {
       <div>
         <img src={Logo} width={35} className={'header__logo'} role="presentation" />
         <span className="header__vertical-divider" />
-        <IconButton onTouchTap={this.props.toggleSidebar} className={'header__nav-drawer'}>
+        <IconButton onClick={this.props.toggleSidebar} className={'header__nav-drawer'}>
           <NavigationMenu />
         </IconButton>
         <span className="header__vertical-divider" />
@@ -39,7 +39,7 @@ class NavBar extends React.Component {
       >
         <MenuItem
           primaryText={'Logout'}
-          onTouchTap={this.props.onLogout}
+          onClick={this.props.onLogout}
         />
       </IconMenu>
     );

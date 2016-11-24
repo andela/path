@@ -3,7 +3,6 @@ import 'styles/main.scss';
 import React from 'react';
 import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import { syncHistoryWithStore } from 'react-router-redux';
 import MuiFramework from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -21,8 +20,6 @@ const andelaBaseTheme = getMuiTheme({
     primary1Color: '#3359DF',
   },
 });
-
-injectTapEventPlugin();
 
 const initialState = {
   auth: {
