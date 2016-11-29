@@ -23,10 +23,10 @@ class GoogleLogIn extends React.Component {
       <div style={wrapperStyle}>
         <span>
           <RaisedButton
-            href={`${API_GATEWAY_URL}/login?redirect_url=${window.location.protocol}//${window.location.host}`}
-            label="Login with Google"
-            backgroundColor="#ff5722"
-            labelColor="white"
+              href={`${API_GATEWAY_URL}/login?redirect_url=${window.location.protocol}//${window.location.host}`}
+              label="Login with Google"
+              backgroundColor="#ff5722"
+              labelColor="white"
           />
         </span>
       </div>
