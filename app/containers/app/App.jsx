@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import NavBar from 'components/app/NavBar';
 import SideBar from 'components/app/SideBar';
 import { fetchCurrentUserIfNeeded } from 'actions/users';
+import DefaultAvatar from '../../images/account_circle.svg'
 
 export class App extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ export class App extends React.Component {
       <div className="root">
         <NavBar
           toggleSidebar={this.toggleSidebar}
-          picture={(user && user.picture)}
+          picture={(user && user.picture) || DefaultAvatar}
           onLogout={this.handleLogout}
         />
         <SideBar
