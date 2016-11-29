@@ -9,6 +9,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import cookie from 'react-cookie';
 import Root from 'containers/app/Root';
 import configureStore from 'store/configureStore';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 const andelaBaseTheme = getMuiTheme({
   appBar: {

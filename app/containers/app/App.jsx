@@ -3,7 +3,6 @@ import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import NavBar from 'components/app/NavBar';
 import SideBar from 'components/app/SideBar';
-import testAvatar from 'images/test_avatar.jpg';
 import { fetchCurrentUserIfNeeded } from 'actions/users';
 
 export class App extends React.Component {
@@ -38,7 +37,7 @@ export class App extends React.Component {
       <div className="root">
         <NavBar
           toggleSidebar={this.toggleSidebar}
-          picture={(user && user.picture) || testAvatar}
+          picture={(user && user.picture)}
           onLogout={this.handleLogout}
         />
         <SideBar
