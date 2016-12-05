@@ -2,3 +2,4 @@ node_modules
 compiled
 assets
 npm-debug.log
+public/*.json
